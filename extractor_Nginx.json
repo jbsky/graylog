@@ -1,0 +1,97 @@
+{
+  "extractors": [
+    {
+      "title": "Nginx Extractor format '\"$http_x_forwarded_for\" - $remote_user [$time_local] \"host: $host\" \"$request\" '                         '$status $body_bytes_sent \"$http_referer\" '                         '\"$http_user_agent\" $request_time \"$http_x_forwarded_proto\"'",
+      "extractor_type": "grok",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "",
+      "extractor_config": {
+        "grok_pattern": "nginx: \"%{IPORHOST:SourceNginxIP}\" - - \\[%{HTTPDATE:http_date}\\] \"host: %{HOSTNAME:http_hostname}\" \"%{WORD:http_method} %{URIPATH:uripath} %{DATA:http_version}\" %{INT:http_coderetour} %{INT:http_length} \"%{DATA:http_url}\" \"%{DATA:http_useragent}\" %{BASE16FLOAT:http_timeelapsed} \"%{WORD:http_backendproto}\""
+      },
+      "condition_type": "regex",
+      "condition_value": "^nginx: \".*"
+    },
+    {
+      "title": "SourceNginxIP geo-lookup-country",
+      "extractor_type": "lookup_table",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "SourceNginxIP",
+      "target_field": "SourceNginxCountry",
+      "extractor_config": {
+        "lookup_table_name": "geo-lookup-country"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "SourceNginxIP geo-lookup-city",
+      "extractor_type": "lookup_table",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "SourceNginxIP",
+      "target_field": "SourceNginxCity",
+      "extractor_config": {
+        "lookup_table_name": "geo-lookup-city"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "SourceNginxIP geo-lookup-asn",
+      "extractor_type": "lookup_table",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "SourceNginxIP",
+      "target_field": "SourceNginxASN",
+      "extractor_config": {
+        "lookup_table_name": "geo-lookup-asn"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "SourceNginxCity -> City",
+      "extractor_type": "copy_input",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "SourceNginxCity",
+      "target_field": "City",
+      "extractor_config": {},
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "SourceNginxCountry -> Country",
+      "extractor_type": "copy_input",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "SourceNginxCountry",
+      "target_field": "Country",
+      "extractor_config": {},
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "SourceNginxASN -> ASN",
+      "extractor_type": "copy_input",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "SourceNginxASN",
+      "target_field": "Country",
+      "extractor_config": {},
+      "condition_type": "none",
+      "condition_value": ""
+    }
+  ],
+  "version": "5.0.0"
+}

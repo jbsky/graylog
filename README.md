@@ -7,25 +7,47 @@ Pfsense filter logs.
 * check Remote Syslog Content
 
 
-#### Graylog 4.2.7
+#### Graylog 5
 ##### System/Input => Syslog UDP: 
-* Set store_full_message: true
+* Set store_full_message: false
+
+It is no need anymore ;)
 
 # Installation
+## Extractor
 * Open the Graylog administrative interface
 * Open the "System/Inputs" menu
 * Select "Inputs"
 * Select "Manage Extractors" for the input that receives Pfsense logs
 * Select "Actions" menu
 * Select "Import extractors"
-* Paste the contents of [extractors.json](extractors.json) into the text box
+* Paste the contents of [extractors.json](extractors.json), into the text box
 * Select the button "Add extractors to input"
+* Repeat import extractors for [extractor_Nginx.json](extractor_Nginx.json)
+
+## Lookup Table
+* Check that you have the same configuration as the capture ![Screenshot](images/Lookup_Tables.png)
+
+## Nginx precaution
+* For Nginx, thanks to respect this log format:
+```
+"$http_x_forwarded_for" - $remote_user [$time_local] "host: $host" "$request" '
+'$status $body_bytes_sent "$http_referer" '
+'"$http_user_agent" $request_time "$http_x_forwarded_proto"'
+```
 
 # Usage
+## Exemple 1
 * Open your Graylog search
 * Search for `application_name:filterlog`
 * The search results should now be showing all TCP/UDP/ICMP data as separate fields
 
+## Exemple 2
+What is interesting is the passage of the IPs to the lookup tables in order to obtain either the City, Country, or ASN coordinates (and tell me what it is ;))
+
+Yes, we will get SourceCity, DestCity and City. With the world map, we will aggregate the data.
+
+![Screenshot](images/Exemple_Worldmap.png)
 
 
 # GeoIP

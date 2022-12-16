@@ -14,10 +14,10 @@
       ],
       "order": 0,
       "cursor_strategy": "copy",
-      "source_field": "full_message",
+      "source_field": "message",
       "target_field": "FilterData",
       "extractor_config": {
-        "regex_value": "^.*filterlog [0-9]* - - (.*)$"
+        "regex_value": "^(.*)$"
       },
       "condition_type": "regex",
       "condition_value": "(.*),(in|out),6,.*,6,tcp,.*$"
@@ -36,10 +36,10 @@
       ],
       "order": 0,
       "cursor_strategy": "copy",
-      "source_field": "full_message",
+      "source_field": "message",
       "target_field": "FilterData",
       "extractor_config": {
-        "regex_value": "^.*filterlog [0-9]* - - (.*)$"
+        "regex_value": "^(.*)$"
       },
       "condition_type": "regex",
       "condition_value": "(.*),(in|out),6,.*,17,udp,.*$"
@@ -59,10 +59,10 @@
       ],
       "order": 0,
       "cursor_strategy": "copy",
-      "source_field": "full_message",
+      "source_field": "message",
       "target_field": "FilterData",
       "extractor_config": {
-        "regex_value": "^.*filterlog [0-9]* - - (.*)$"
+        "regex_value": "^(.*)$"
       },
       "condition_type": "regex",
       "condition_value": "(.*),(in|out),4,.*,6,tcp,.*$"
@@ -82,10 +82,10 @@
       ],
       "order": 0,
       "cursor_strategy": "copy",
-      "source_field": "full_message",
+      "source_field": "message",
       "target_field": "FilterData",
       "extractor_config": {
-        "regex_value": "^.*filterlog [0-9]* - - (.*)$"
+        "regex_value": "^(.*)$"
       },
       "condition_type": "regex",
       "condition_value": "(.*),(in|out),4,.*,17,udp,.*$"
@@ -104,10 +104,10 @@
       ],
       "order": 0,
       "cursor_strategy": "copy",
-      "source_field": "full_message",
+      "source_field": "message",
       "target_field": "FilterData",
       "extractor_config": {
-        "regex_value": "^.*filterlog [0-9]* - - (.*)$"
+        "regex_value": "^(.*)$"
       },
       "condition_type": "regex",
       "condition_value": "(.*),(in|out),4,.*,icmp,.*,(request|reply),.*$"
@@ -126,10 +126,10 @@
       ],
       "order": 0,
       "cursor_strategy": "copy",
-      "source_field": "full_message",
+      "source_field": "message",
       "target_field": "FilterData",
       "extractor_config": {
-        "regex_value": "^.*filterlog [0-9]* - - (.*)$"
+        "regex_value": "^(.*)$"
       },
       "condition_type": "regex",
       "condition_value": "(.*),(in|out),4,.*,icmp,.*,needfrag,.*$"
@@ -148,10 +148,10 @@
       ],
       "order": 0,
       "cursor_strategy": "copy",
-      "source_field": "full_message",
+      "source_field": "message",
       "target_field": "FilterData",
       "extractor_config": {
-        "regex_value": "^.*filterlog [0-9]* - - (.*)$"
+        "regex_value": "^(.*)$"
       },
       "condition_type": "regex",
       "condition_value": "(.*),(in|out),4,.*,icmp,.*,(unreach|timexceed|paramprob|redirect|maskreply),.*$"
@@ -170,10 +170,10 @@
       ],
       "order": 0,
       "cursor_strategy": "copy",
-      "source_field": "full_message",
+      "source_field": "message",
       "target_field": "FilterData",
       "extractor_config": {
-        "regex_value": "^.*filterlog [0-9]* - - (.*)$"
+        "regex_value": "^(.*)$"
       },
       "condition_type": "regex",
       "condition_value": "(.*),(in|out),4,.*,icmp,.*,unreachproto,.*$"
@@ -192,10 +192,10 @@
       ],
       "order": 0,
       "cursor_strategy": "copy",
-      "source_field": "full_message",
+      "source_field": "message",
       "target_field": "FilterData",
       "extractor_config": {
-        "regex_value": "^.*filterlog [0-9]* - - (.*)$"
+        "regex_value": "^(.*)$"
       },
       "condition_type": "regex",
       "condition_value": "(.*),(in|out),4,.*,icmp,.*,unreachport,.*$"
@@ -214,10 +214,10 @@
       ],
       "order": 0,
       "cursor_strategy": "copy",
-      "source_field": "full_message",
+      "source_field": "message",
       "target_field": "FilterData",
       "extractor_config": {
-        "regex_value": "^.*filterlog [0-9]* - - (.*)$"
+        "regex_value": "^(.*)$"
       },
       "condition_type": "regex",
       "condition_value": "(.*),(in|out),4,.*,icmp,.*,tstamp,.*$"
@@ -236,10 +236,10 @@
       ],
       "order": 0,
       "cursor_strategy": "copy",
-      "source_field": "full_message",
+      "source_field": "message",
       "target_field": "FilterData",
       "extractor_config": {
-        "regex_value": "^.*filterlog [0-9]* - - (.*)$"
+        "regex_value": "^(.*)$"
       },
       "condition_type": "regex",
       "condition_value": "(.*),(in|out),4,.*,icmp,.*,tstampreply,.*$"
@@ -258,10 +258,10 @@
       ],
       "order": 0,
       "cursor_strategy": "copy",
-      "source_field": "full_message",
+      "source_field": "message",
       "target_field": "FilterData",
       "extractor_config": {
-        "regex_value": "^.*filterlog [0-9]* - - (.*)$"
+        "regex_value": "^(.*)$"
       },
       "condition_type": "regex",
       "condition_value": "(.*),(in|out),4,.*,icmp,.*,(?!(request|reply|unreachproto|unreachport|unreach|timexceed|paramprob|redirect|maskreply|needfrag|tstamp|tstampreply)),.*$"
@@ -280,57 +280,185 @@
       ],
       "order": 0,
       "cursor_strategy": "copy",
-      "source_field": "full_message",
+      "source_field": "message",
       "target_field": "FilterData",
       "extractor_config": {
-        "regex_value": "^.*filterlog [0-9]* - - (.*)$"
+        "regex_value": "^(.*)$"
       },
       "condition_type": "regex",
       "condition_value": "(.*),(in|out),6,.*,1,Options,.*$"
     },
     {
-      "title": "suricata",
+      "title": "pfSense suricata",
       "extractor_type": "grok",
       "converters": [],
       "order": 0,
       "cursor_strategy": "copy",
-      "source_field": "full_message",
+      "source_field": "message",
       "target_field": "",
       "extractor_config": {
-        "grok_pattern": ".* - - .%{NUMBER:suricata_id1}:%{NUMBER:suricata_id2}:%{NUMBER:suricata_id3}. %{DATA:info}. .Priority: %{NUMBER:priority}. .%{URIPROTO:protocol}} %{IPORHOST:ip_src}:%{POSINT:port_src} -> %{IPORHOST:ip_dst}:%{POSINT:port_dst}",
+        "grok_pattern": "%{DATA:info}..[Priority: %{NUMBER:priority}]\\{%{URIPROTO:protocol}} %{IPORHOST:SourceIP}:%{POSINT:SourcePort} -> %{IPORHOST:DestIP}:%{POSINT:DestPort}",
         "named_captures_only": false
       },
       "condition_type": "none",
       "condition_value": ""
     },
     {
-      "title": "Geo_Dest",
+      "title": "SourceIP geo-lookup-country",
       "extractor_type": "lookup_table",
       "converters": [],
       "order": 0,
       "cursor_strategy": "copy",
-      "source_field": "ip_dst",
-      "target_field": "Geo_Dest",
+      "source_field": "SourceIP",
+      "target_field": "SourceCountry",
       "extractor_config": {
-        "lookup_table_name": "geo-lookup"
+        "lookup_table_name": "geo-lookup-country"
       },
       "condition_type": "none",
       "condition_value": ""
     },
     {
-      "title": "Geo_Source",
+      "title": "SourceIP geo-lookup-city",
       "extractor_type": "lookup_table",
       "converters": [],
       "order": 0,
       "cursor_strategy": "copy",
-      "source_field": "ip_src",
-      "target_field": "Geo_Source",
+      "source_field": "SourceIP",
+      "target_field": "SourceCity",
       "extractor_config": {
-        "lookup_table_name": "geo-lookup"
+        "lookup_table_name": "geo-lookup-city"
       },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "DestIP geo-lookup-country",
+      "extractor_type": "lookup_table",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "DestIP",
+      "target_field": "DestCountry",
+      "extractor_config": {
+        "lookup_table_name": "geo-lookup-country"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "DestIP geo-lookup-city",
+      "extractor_type": "lookup_table",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "DestIP",
+      "target_field": "DestCity",
+      "extractor_config": {
+        "lookup_table_name": "geo-lookup-city"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "DestIP geo-lookup-asn",
+      "extractor_type": "lookup_table",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "DestIP",
+      "target_field": "DestASN",
+      "extractor_config": {
+        "lookup_table_name": "geo-lookup-asn"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "SourceIP geo-lookup-asn",
+      "extractor_type": "lookup_table",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "SourceIP",
+      "target_field": "SourceASN",
+      "extractor_config": {
+        "lookup_table_name": "geo-lookup-asn"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "SourceCity -> City",
+      "extractor_type": "copy_input",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "SourceCity",
+      "target_field": "City",
+      "extractor_config": {},
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "DestCity -> City",
+      "extractor_type": "copy_input",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "DestCity",
+      "target_field": "City",
+      "extractor_config": {},
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "SourceASN -> ASN",
+      "extractor_type": "copy_input",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "SourceASN",
+      "target_field": "ASN",
+      "extractor_config": {},
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "DestASN -> ASN",
+      "extractor_type": "copy_input",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "DestASN",
+      "target_field": "ASN",
+      "extractor_config": {},
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "SourceCountry -> Country",
+      "extractor_type": "copy_input",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "SourceCountry",
+      "target_field": "Country",
+      "extractor_config": {},
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "DestCountry -> Country",
+      "extractor_type": "copy_input",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "DestCountry",
+      "target_field": "Country",
+      "extractor_config": {},
       "condition_type": "none",
       "condition_value": ""
     }
   ],
-  "version": "4.2.7"
+  "version": "5.0.0"
 }
