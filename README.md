@@ -1,5 +1,5 @@
 This is a set of extractors for use within Graylog, to parse the output of
-Pfsense filter logs.
+Pfsense filter and Nginx logs.
 # Prerequisites
 #### Pfsense 2.6.0-RELEASE
 * Select Log Message Format to "syslog (RFC 5424, with RFC 3339 microsecond-precision timestamps)"
