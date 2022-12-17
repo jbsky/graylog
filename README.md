@@ -31,7 +31,7 @@ It is no need anymore ;)
 ## Nginx precaution
 * For Nginx, thanks to respect this log format:
 ```
-"$http_x_forwarded_for" - $remote_user [$time_local] "host: $host" "$request" '
+'"$http_x_forwarded_for" - $remote_user [$time_local] "host: $host" "$request" '
 '$status $body_bytes_sent "$http_referer" '
 '"$http_user_agent" $request_time "$http_x_forwarded_proto"'
 ```
